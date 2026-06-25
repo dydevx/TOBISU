@@ -1153,6 +1153,8 @@
         #f6efe5;
       cursor: zoom-in;
       transform-origin: center;
+      content-visibility: auto;
+      contain-intrinsic-size: 460px 657px;
       transition: filter var(--transition), transform var(--transition);
     }
 
@@ -1165,6 +1167,12 @@
       height: 100%;
       object-fit: contain;
       background: #f6efe5;
+      opacity: 0;
+      transition: opacity 220ms ease;
+    }
+
+    .book-page img.is-loaded {
+      opacity: 1;
     }
 
     .book-page span {
@@ -3219,7 +3227,7 @@
                 <i class="fa-regular fa-clock" aria-hidden="true"></i>
                 <div>
                   <strong>Öffnungszeiten</strong>
-                  <span>Mo.: Geschlossen<br>Di. - So.: 11:00 - 15:00 &amp; 17:00 - 22:00</span>
+                  <span>Mo: Geschlossen<br>Di - So: 11:00 - 15:00 &amp; 17:00 - 22:00</span>
                 </div>
               </li>
             </ul>
@@ -3336,6 +3344,7 @@
 
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
     window.addEventListener("load", revealVisibleElements, { once: true });
+    window.addEventListener("scroll", revealVisibleElements, { passive: true });
     if (window.location.hash) {
       requestAnimationFrame(() => setTimeout(revealVisibleElements, 120));
     }
@@ -3367,11 +3376,10 @@
     ];
     const menuBookPages = menuBookNumbers.map((number) => {
       const label = String(number).padStart(2, "0");
-      const file = `assets/menu-final/${number}.jpg`;
       return {
         label,
-        thumb: file,
-        full: file
+        thumb: `assets/menu-final/thumbs/${number}.jpg`,
+        full: `assets/menu-final/large/${number}.jpg`
       };
     });
     const menuBookStage = document.getElementById("menuBookStage");
@@ -3383,10 +3391,15 @@
     const renderMenuBook = () => {
       menuBookStage.innerHTML = menuBookPages.map((page, index) => `
         <button class="book-page" type="button" data-full="${page.full}" aria-label="Men\u00fcseite ${page.label} vergr\u00f6\u00dfern">
-          <img src="${page.thumb}" alt="TOBISU Speisekarte Seite ${page.label}" loading="${index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index === 0 ? "high" : "low"}">
+          <img src="${page.thumb}" alt="TOBISU Speisekarte Seite ${page.label}" width="900" height="1273" loading="${index === 0 ? "eager" : "lazy"}" decoding="async" fetchpriority="${index === 0 ? "high" : "auto"}">
           <span>Men\u00fcseite ${page.label}</span>
         </button>
       `).join("");
+
+      menuBookStage.querySelectorAll("img").forEach((image) => {
+        if (image.complete) image.classList.add("is-loaded");
+        image.addEventListener("load", () => image.classList.add("is-loaded"), { once: true });
+      });
 
       menuBookTitle.textContent = "Vollst\u00e4ndige Speisekarte";
       menuBookCounter.textContent = `${menuBookPages.length} Men\u00fcseiten`;
