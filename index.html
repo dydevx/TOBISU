@@ -33,7 +33,10 @@
     "telephone": "+4967429415865",
     "email": "buiphuong160693@gmail.com",
     "priceRange": "€€",
-    "openingHours": "Mo-Su 11:00-22:00"
+    "openingHours": [
+      "Tu-Su 11:00-15:00",
+      "Tu-Su 17:00-22:00"
+    ]
   }
   </script>
 
@@ -143,7 +146,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 78px;
+      min-height: 94px;
       gap: 18px;
     }
 
@@ -151,14 +154,14 @@
       display: inline-flex;
       align-items: center;
       gap: 16px;
-      min-width: max-content;
+      min-width: 0;
       color: var(--white);
     }
 
     .brand-logo {
       display: block;
-      width: 82px;
-      height: 82px;
+      width: 104px;
+      height: 104px;
       border: 1px solid rgba(201, 162, 87, 0.5);
       border-radius: 50%;
       object-fit: cover;
@@ -192,6 +195,7 @@
     .brand-text {
       display: flex;
       flex-direction: column;
+      min-width: 0;
       line-height: 1;
     }
 
@@ -272,6 +276,7 @@
 
     .nav-toggle {
       display: none;
+      flex: 0 0 auto;
       width: 44px;
       height: 44px;
       border: 1px solid rgba(214, 178, 94, 0.44);
@@ -431,6 +436,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      min-width: 0;
       min-height: 34px;
       padding: 8px 18px;
       border: 1px solid rgba(255, 255, 255, 0.16);
@@ -441,7 +447,13 @@
     }
 
     .hero-meta i {
+      flex: 0 0 auto;
       color: var(--gold);
+    }
+
+    .hero-meta .meta-copy {
+      display: inline-block;
+      min-width: 0;
     }
 
     .hero-actions,
@@ -1947,7 +1959,7 @@
       }
 
       .nav-menu {
-        top: 82px;
+        top: 94px;
       }
 
       .brand-mark {
@@ -1956,8 +1968,8 @@
       }
 
       .brand-logo {
-        width: 46px;
-        height: 46px;
+        width: 64px;
+        height: 64px;
       }
 
       .brand-name {
@@ -2383,8 +2395,8 @@
       }
 
       .brand-logo {
-        width: 60px;
-        height: 60px;
+        width: 68px;
+        height: 68px;
       }
 
       .brand-name {
@@ -2392,7 +2404,7 @@
       }
 
       .brand-sub {
-        font-size: 0.62rem;
+        font-size: 0.56rem;
       }
     }
   </style>
@@ -2472,7 +2484,7 @@
       <div class="hero-meta">
         <span><i class="fa-solid fa-utensils" aria-hidden="true"></i> Sushi &amp; Vietnamesische Küche</span>
         <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Heerstraße 175, 56154 Boppard</span>
-        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> Mo.-So.: 11:00-22:00 Uhr</span>
+        <span><i class="fa-regular fa-clock" aria-hidden="true"></i><span class="meta-copy">Mo.: Geschlossen<br>Di.-So.: 11:00 - 15:00 &amp; 17:00 - 22:00 Uhr</span></span>
       </div>
     </section>
 
@@ -2531,14 +2543,14 @@
             <div class="dish-grid">
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1680675228874-9b9963812b7c?auto=format&w=900&q=78" alt="Nigiri mit Lachs" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1680675228874-9b9963812b7c?auto=format&w=900&q=78" alt="Sake Nigiri mit Lachs" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Nigiri</h4>
-                    <span class="price">5,90 €</span>
+                    <h4>Sake Nigiri</h4>
+                    <span class="price">5,50 €</span>
                   </div>
-                  <p>Handgeformter Sushi-Reis mit zartem Fisch und feinem Wasabi.</p>
+                  <p>2 Stück mit Lachs auf rund geformtem japanischem Reis.</p>
                 </div>
               </article>
 
@@ -2548,10 +2560,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Sashimi</h4>
-                    <span class="price">16,90 €</span>
+                    <h4>Sake Sashimi</h4>
+                    <span class="price">21,90 €</span>
                   </div>
-                  <p>Pur servierte Fischscheiben, präzise geschnitten und elegant angerichtet.</p>
+                  <p>12 fein geschnittene Lachsscheiben, pur und elegant serviert.</p>
                 </div>
               </article>
 
@@ -2561,10 +2573,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Maki</h4>
-                    <span class="price">6,50 €</span>
+                    <h4>Avosake Maki</h4>
+                    <span class="price">5,20 €</span>
                   </div>
-                  <p>Klassische Rollen mit Nori, Sushi-Reis und frischen Füllungen.</p>
+                  <p>6 klassische Maki mit Lachs, Avocado, Reis und Seealgen.</p>
                 </div>
               </article>
 
@@ -2574,10 +2586,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Uramaki</h4>
+                    <h4>Sake I.O.</h4>
                     <span class="price">9,90 €</span>
                   </div>
-                  <p>Inside-out-Rollen mit cremiger Textur und harmonischer Würze.</p>
+                  <p>Inside-Out Roll mit Lachs, Avocado und Masago.</p>
                 </div>
               </article>
 
@@ -2587,36 +2599,36 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Tempura Roll</h4>
-                    <span class="price">13,90 €</span>
+                    <h4>Ebi Tempura I.O.</h4>
+                    <span class="price">9,90 €</span>
                   </div>
-                  <p>Knusprige Rollenspezialität mit feiner Sauce und frischem Gemüse.</p>
+                  <p>Gebackene Garnelen mit Avocado, Rucola, Cream Cheese, Masago und Sesam.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1628676825875-031ad212c31e?auto=format&w=900&q=78" alt="Dragon Roll" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1628676825875-031ad212c31e?auto=format&w=900&q=78" alt="Roaring Tiger Sushi Roll" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Dragon Roll</h4>
-                    <span class="price">15,90 €</span>
+                    <h4>Roaring Tiger</h4>
+                    <span class="price">14,90 €</span>
                   </div>
-                  <p>Markante Premium-Rolle mit Avocado, Fisch und eleganter Glasur.</p>
+                  <p>Spezialrolle mit Garnele, Aal, Avocado, Gurke, Tobiko und flambiertem Lachs.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1558985212-92c2ff0b56e7?auto=format&w=900&q=78" alt="California Roll" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1558985212-92c2ff0b56e7?auto=format&w=900&q=78" alt="Rainbow Sushi Roll" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>California Roll</h4>
-                    <span class="price">10,90 €</span>
+                    <h4>Rainbow</h4>
+                    <span class="price">14,90 €</span>
                   </div>
-                  <p>Milde Uramaki-Rolle mit Surimi, Avocado und feiner Sesamnote.</p>
+                  <p>Surimi, Tobiko und Thai-Spargel, umwickelt mit Lachs.</p>
                 </div>
               </article>
 
@@ -2626,10 +2638,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Sake Avocado Roll</h4>
-                    <span class="price">12,90 €</span>
+                    <h4>Salmon Specials</h4>
+                    <span class="price">14,90 €</span>
                   </div>
-                  <p>Feine Lachsrolle mit Avocado, Reis und frischer cremiger Note.</p>
+                  <p>Lachs, Avocado und Cream Cheese, umwickelt mit Avocado.</p>
                 </div>
               </article>
             </div>
@@ -2640,27 +2652,27 @@
             <div class="dish-grid">
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1631709497146-a239ef373cf1?auto=format&w=900&q=78" alt="Pho Bo mit Kräutern" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1631709497146-a239ef373cf1?auto=format&w=900&q=78" alt="Pho Suppe mit Kräutern" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Pho Bo</h4>
-                    <span class="price">14,90 €</span>
+                    <h4>Pho</h4>
+                    <span class="price">ab 13,90 €</span>
                   </div>
-                  <p>Rinderbrühe mit Reisnudeln, Kräutern, Limette und zartem Rind.</p>
+                  <p>Traditionelle Pho-Suppe mit Reisbandnudeln, Koriander, Zwiebeln und Zutat nach Wahl.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1597345637412-9fd611e758f3?auto=format&w=900&q=78" alt="Bun Bo Hue" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1597345637412-9fd611e758f3?auto=format&w=900&q=78" alt="Udon Nudelsuppe" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Bun Bo Hue</h4>
-                    <span class="price">15,90 €</span>
+                    <h4>Udon-Nudelsuppe</h4>
+                    <span class="price">ab 13,90 €</span>
                   </div>
-                  <p>Würzige Nudelsuppe aus Hue mit Rind, Zitronengras und Chili.</p>
+                  <p>Japanische Nudelsuppe mit Zwiebeln, Seetang, Pak Choi und Zutat nach Wahl.</p>
                 </div>
               </article>
 
@@ -2670,10 +2682,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Frühlingsrollen</h4>
-                    <span class="price">6,90 €</span>
+                    <h4>Nem Viet Nam</h4>
+                    <span class="price">5,50 €</span>
                   </div>
-                  <p>Knusprig gebacken, gefüllt mit Gemüse und aromatischen Gewürzen.</p>
+                  <p>2 hausgemachte Frühlingsrollen mit Hackfleisch und Nuoc-Mam-Fischsauce.</p>
                 </div>
               </article>
 
@@ -2683,10 +2695,10 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Sommerrollen</h4>
-                    <span class="price">7,50 €</span>
+                    <h4>Goi Cuon</h4>
+                    <span class="price">ab 4,90 €</span>
                   </div>
-                  <p>Reispapierrollen mit Kräutern, Salat, Reisnudeln und Dip.</p>
+                  <p>2 Sommerrollen mit Reisnudeln, Salat, Karotten, Gurken und Reispapier.</p>
                 </div>
               </article>
 
@@ -2696,49 +2708,49 @@
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Bun Cha</h4>
-                    <span class="price">15,50 €</span>
+                    <h4>Bun Cha Ha Noi</h4>
+                    <span class="price">17,90 €</span>
                   </div>
-                  <p>Gegrilltes Fleisch mit Reisnudeln, Kräutern und Nuoc-Mam-Sauce.</p>
+                  <p>Mariniertes BBQ-Schweinefleisch mit Reisnudeln, Salat, Gurke und Limetten-Fischsauce.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="assets/dishes/com-tam.jpg" alt="Com Tam mit gegrilltem Schweinekotelett, Ei und Gemüse" loading="lazy">
+                  <img src="assets/dishes/com-tam.jpg" alt="Bun Bo Nam Bo Bowl" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Com Tam</h4>
+                    <h4>Bun Bo Nam Bo</h4>
                     <span class="price">16,90 €</span>
                   </div>
-                  <p>Duftreis mit gegrilltem Fleisch, frischem Gemüse und Sauce.</p>
+                  <p>Reisnudelsalat mit wokgeschwenktem Rindfleisch, Pak Choi, Kräutern und Nuoc Mam.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1628997323766-c846909a7049?auto=format&w=900&q=78" alt="Gebratene Nudeln" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1628997323766-c846909a7049?auto=format&w=900&q=78" alt="Pho Xao gebratene Reisbandnudeln" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Gebratene Nudeln</h4>
-                    <span class="price">12,90 €</span>
+                    <h4>Pho Xao</h4>
+                    <span class="price">ab 13,90 €</span>
                   </div>
-                  <p>Wokgebratene Nudeln mit Gemüse, Kräutern und feiner Würze.</p>
+                  <p>Gebratene Reisbandnudeln mit Sojasprossen, Ei, Koriander und Zutat nach Wahl.</p>
                 </div>
               </article>
 
               <article class="dish-card">
                 <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&w=900&q=78" alt="Mango Curry mit Gemüse" loading="lazy">
+                  <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&w=900&q=78" alt="Curry Kokosmilch mit Gemüse" loading="lazy">
                 </div>
                 <div class="dish-body">
                   <div class="dish-title-row">
-                    <h4>Mango Curry</h4>
-                    <span class="price">14,90 €</span>
+                    <h4>Curry Kokosmilch</h4>
+                    <span class="price">ab 13,90 €</span>
                   </div>
-                  <p>Cremiges Curry mit Mango, Gemüse, Kräutern und duftendem Reis.</p>
+                  <p>Rotes oder gelbes Curry in Kokoscreme mit Gemüse, Salat und Jasminreis.</p>
                 </div>
               </article>
             </div>
@@ -2751,8 +2763,8 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-kicker">Speisekarte</span>
-          <h2 class="section-title">Ausgewählte Gerichte für jeden Moment.</h2>
-          <p class="section-lead">Sushi, vietnamesische Küche, Getränke und Nachspeisen in klarer, eleganter Auswahl.</p>
+          <h2 class="section-title">Ausgewählte Gerichte aus der neuen Karte.</h2>
+          <p class="section-lead">Aktuelle Favoriten aus Sushi, warmer Küche, Getränken und Desserts. Die vollständige Karte finden Sie direkt darunter.</p>
         </div>
 
         <div class="tabs-shell reveal">
@@ -2767,45 +2779,45 @@
             <div class="menu-list">
               <div class="menu-row">
                 <div>
+                  <h4>Sake Maki</h4>
+                  <p>6 Stück mit Lachs, japanischem Reis und Seealgen.</p>
+                </div>
+                <span class="price">5,20 €</span>
+              </div>
+              <div class="menu-row">
+                <div>
                   <h4>Sake Nigiri</h4>
-                  <p>Lachs, Sushi-Reis, Wasabi und feine Sojanote.</p>
+                  <p>2 Stück mit Lachs auf geformtem Sushi-Reis.</p>
                 </div>
-                <span class="price">5,90 €</span>
+                <span class="price">5,50 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Tuna Sashimi</h4>
-                  <p>Premium-Thunfisch, pur und fein geschnitten.</p>
+                  <h4>Ebi Tempura I.O.</h4>
+                  <p>Inside-Out Roll mit gebackenen Garnelen, Avocado, Rucola, Cream Cheese, Masago und Sesam.</p>
                 </div>
-                <span class="price">17,90 €</span>
+                <span class="price">9,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Spicy Salmon Maki</h4>
-                  <p>Lachs, Chili-Mayonnaise, Gurke und Nori.</p>
+                  <h4>Roaring Tiger</h4>
+                  <p>Spezialrolle mit gebackenen Garnelen, gegrilltem Aal, Avocado, Gurke, Tobiko und flambiertem Lachs.</p>
                 </div>
-                <span class="price">7,90 €</span>
+                <span class="price">14,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>TOBISU Spezialrolle</h4>
-                  <p>Lachs, Avocado, Tobiko und hausgemachte Sauce.</p>
+                  <h4>Tobisu Roll</h4>
+                  <p>Baked Roll mit gebackener Garnele, Rucola, Avocado und Cream Cheese.</p>
                 </div>
-                <span class="price">16,90 €</span>
+                <span class="price">14,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Dragon Roll</h4>
-                  <p>Aal, Avocado, Gurke und Unagi-Sauce.</p>
+                  <h4>Sushi Menü 5</h4>
+                  <p>2 Sake Gunkan, 2 Nigiri, 6 Avosake Maki, 8 Ebi Tempura I.O. und 10 Toronto Rolls.</p>
                 </div>
-                <span class="price">15,90 €</span>
-              </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Tempura Roll</h4>
-                  <p>Knusprige Garnele, Avocado und Sesam.</p>
-                </div>
-                <span class="price">13,90 €</span>
+                <span class="price">37,90 €</span>
               </div>
             </div>
           </div>
@@ -2814,45 +2826,45 @@
             <div class="menu-list">
               <div class="menu-row">
                 <div>
-                  <h4>Pho Bo</h4>
-                  <p>Rinderbrühe, Reisnudeln, Kräuter, Limette und Chili.</p>
+                  <h4>Miso Suppe</h4>
+                  <p>Feine Brühe mit japanischem Tofu oder Lachs, Seetang, Zuckererbsen, Koriander und Lauchzwiebeln.</p>
                 </div>
-                <span class="price">14,90 €</span>
+                <span class="price">ab 4,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Bun Bo Hue</h4>
-                  <p>Würzige Suppe mit Rind, Zitronengras und frischen Kräutern.</p>
+                  <h4>Goi Cuon</h4>
+                  <p>2 hausgemachte Sommerrollen mit Reisnudeln, Salat, Karotten, Gurken und Reispapier.</p>
                 </div>
-                <span class="price">15,90 €</span>
+                <span class="price">ab 4,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Bun Cha</h4>
-                  <p>Gegrilltes Fleisch, Reisnudeln, Kräuter und Sauce.</p>
+                  <h4>Pho</h4>
+                  <p>Traditionelle Pho-Suppe mit Reisbandnudeln, frischem Koriander, Zwiebeln und Zutat nach Wahl.</p>
                 </div>
-                <span class="price">15,50 €</span>
+                <span class="price">ab 13,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Com Tam</h4>
-                  <p>Duftreis, gegrilltes Fleisch, Gemüse und Nuoc-Mam-Dip.</p>
+                  <h4>Bun Cha Ha Noi</h4>
+                  <p>Mariniertes BBQ-Schweinefleisch mit Reisnudeln, Salat, Gurke, Sesam und Limetten-Fischsauce.</p>
+                </div>
+                <span class="price">17,90 €</span>
+              </div>
+              <div class="menu-row">
+                <div>
+                  <h4>Curry Kokosmilch</h4>
+                  <p>Rotes oder gelbes Curry in Kokoscreme mit Gemüse, Salat, Jasminreis und Zutat nach Wahl.</p>
+                </div>
+                <span class="price">ab 13,90 €</span>
+              </div>
+              <div class="menu-row">
+                <div>
+                  <h4>Beef Teriyaki</h4>
+                  <p>Gegrilltes Rinderfilet mit Teriyaki-Sauce, Salat, Jasminreis und Sesam.</p>
                 </div>
                 <span class="price">16,90 €</span>
-              </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Sommerrollen</h4>
-                  <p>Reispapier, Reisnudeln, Salat, Kräuter und Erdnuss-Dip.</p>
-                </div>
-                <span class="price">7,50 €</span>
-              </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Gebratene Nudeln</h4>
-                  <p>Woknudeln mit Gemüse, Kräutern und wählbarer Proteinbeilage.</p>
-                </div>
-                <span class="price">12,90 €</span>
               </div>
             </div>
           </div>
@@ -2861,45 +2873,45 @@
             <div class="menu-list">
               <div class="menu-row">
                 <div>
-                  <h4>Jasmintee</h4>
-                  <p>Fein duftender Tee, warm serviert.</p>
+                  <h4>Coca Cola</h4>
+                  <p>0,33 l Softdrink.</p>
                 </div>
                 <span class="price">3,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Vietnamesischer Eiskaffee</h4>
-                  <p>Kräftiger Kaffee mit gesüßter Kondensmilch.</p>
+                  <h4>Vietnamesischer Kaffee</h4>
+                  <p>Vietnamesisch gebrühter Kaffee mit Kondensmilch.</p>
                 </div>
-                <span class="price">5,20 €</span>
+                <span class="price">5,50 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Sake</h4>
-                  <p>Japanischer Reiswein, warm oder gekühlt.</p>
+                  <h4>Tra Gung</h4>
+                  <p>Frischer Ingwer, Limettenscheiben und Honig.</p>
+                </div>
+                <span class="price">5,90 €</span>
+              </div>
+              <div class="menu-row">
+                <div>
+                  <h4>Xoai Chanh Da</h4>
+                  <p>Fruchtige Mango mit Limettenscheiben, Minze und Rohrzucker.</p>
                 </div>
                 <span class="price">6,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Lychee Spritz</h4>
-                  <p>Fruchtig, leicht und elegant perlend.</p>
+                  <h4>Matcha Latte</h4>
+                  <p>Japanischer Matcha mit cremiger Milch.</p>
                 </div>
-                <span class="price">7,90 €</span>
+                <span class="price">6,50 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Hausgemachte Limonade</h4>
-                  <p>Limette, Minze und frische Zitrusnoten.</p>
+                  <h4>Saigon Bier</h4>
+                  <p>Vietnamesisches Bier, 0,33 l.</p>
                 </div>
-                <span class="price">5,40 €</span>
-              </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Grüner Tee</h4>
-                  <p>Klarer Geschmack mit sanfter Herbe.</p>
-                </div>
-                <span class="price">3,80 €</span>
+                <span class="price">4,50 €</span>
               </div>
             </div>
           </div>
@@ -2909,30 +2921,37 @@
               <div class="menu-row">
                 <div>
                   <h4>Mochi Eis</h4>
-                  <p>Japanische Reisteigkugeln mit cremiger Eisfüllung.</p>
+                  <p>3 Stück, serviert mit einer Kugel Vanilleeis.</p>
                 </div>
-                <span class="price">6,50 €</span>
+                <span class="price">5,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Mango Sticky Rice</h4>
-                  <p>Klebreis mit Mango, Kokosmilch und Sesam.</p>
+                  <h4>Matcha Eis</h4>
+                  <p>Hausgemachtes Matcha-Eis mit Erdnüssen und Minze.</p>
                 </div>
-                <span class="price">7,90 €</span>
+                <span class="price">5,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Matcha Tiramisu</h4>
-                  <p>Feines Dessert mit Matcha, Mascarpone und Biskuit.</p>
+                  <h4>Tempura Eis</h4>
+                  <p>Frittiertes Eis mit Sesam und Honig.</p>
                 </div>
-                <span class="price">7,50 €</span>
+                <span class="price">5,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Kokos-Panna-Cotta</h4>
-                  <p>Sanft, cremig und mit fruchtigem Akzent.</p>
+                  <h4>Chuoi Chien</h4>
+                  <p>Gebackene Banane im hausgemachten Teig mit Honig, Vanilleeis und Sesam.</p>
                 </div>
-                <span class="price">6,90 €</span>
+                <span class="price">5,90 €</span>
+              </div>
+              <div class="menu-row">
+                <div>
+                  <h4>Dua Chien</h4>
+                  <p>Gebackene Ananas in hausgemachter Panade mit Honig, Vanilleeis und Sesam.</p>
+                </div>
+                <span class="price">5,90 €</span>
               </div>
             </div>
           </div>
@@ -2951,7 +2970,7 @@
               </button>
               <div class="menu-book-status" aria-live="polite">
                 <strong id="menuBookTitle">Men&uuml;seite</strong>
-                <span id="menuBookCounter">1 / 30</span>
+                <span id="menuBookCounter">34 Men&uuml;seiten</span>
               </div>
               <button class="icon-btn menu-book-btn" id="menuBookNext" type="button" aria-label="N&auml;chste Men&uuml;seite">
                 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
@@ -3100,7 +3119,7 @@
           <h3>Ihr Tisch bei TOBISU.</h3>
           <p>Reservieren Sie bequem online oder senden Sie uns Ihre Anfrage über das Formular.</p>
           <ul class="reservation-list">
-            <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Mo.-So.: 11:00-22:00 Uhr</span></li>
+            <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Mo.: Geschlossen<br>Di. - So.: 11:00 - 15:00 &amp; 17:00 - 22:00</span></li>
             <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Heerstraße 175, 56154 Boppard, Deutschland</span></li>
             <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp: 06742 9415865</span></li>
           </ul>
@@ -3200,7 +3219,7 @@
                 <i class="fa-regular fa-clock" aria-hidden="true"></i>
                 <div>
                   <strong>Öffnungszeiten</strong>
-                  <span>Mo.-So.: 11:00-22:00 Uhr</span>
+                  <span>Mo.: Geschlossen<br>Di. - So.: 11:00 - 15:00 &amp; 17:00 - 22:00</span>
                 </div>
               </li>
             </ul>
@@ -3305,7 +3324,21 @@
       });
     }, { threshold: 0.16 });
 
+    const revealVisibleElements = () => {
+      document.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          element.classList.add("is-visible");
+          revealObserver.unobserve(element);
+        }
+      });
+    };
+
     document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    window.addEventListener("load", revealVisibleElements, { once: true });
+    if (window.location.hash) {
+      requestAnimationFrame(() => setTimeout(revealVisibleElements, 120));
+    }
 
     const tabButtons = document.querySelectorAll(".tab-btn");
     const tabPanels = document.querySelectorAll(".tab-panel");
@@ -3330,11 +3363,11 @@
     const menuBookNumbers = [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
       12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-      22, 23, 24, 25, 26, 28, 29, 30, 31, 37, 38, 39
+      22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 38, 39, 40
     ];
     const menuBookPages = menuBookNumbers.map((number) => {
       const label = String(number).padStart(2, "0");
-      const file = `assets/menu-updated/${number}.jpg`;
+      const file = `assets/menu-final/${number}.jpg`;
       return {
         label,
         thumb: file,
