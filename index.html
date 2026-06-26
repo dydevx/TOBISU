@@ -1736,16 +1736,22 @@
     }
 
     .footer-bottom {
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
       align-items: center;
       gap: 20px;
       padding-top: 24px;
       font-size: 0.86rem;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      grid-column: 2;
     }
 
     .footer-links {
       display: flex;
+      justify-self: end;
       gap: 18px;
       list-style: none;
     }
@@ -1954,8 +1960,7 @@
         grid-row: span 2;
       }
 
-      .footer-top,
-      .footer-bottom {
+      .footer-top {
         align-items: flex-start;
         flex-direction: column;
       }
@@ -2341,10 +2346,15 @@
         #070707;
     }
 
-    .dish-image img,
-    .gallery-item img {
+    .dish-image img {
       object-fit: contain !important;
       object-position: center !important;
+    }
+
+    .gallery-item img {
+      object-fit: cover !important;
+      object-position: center !important;
+      padding: 0;
     }
 
     .dish-card:hover .dish-image img,
@@ -2379,10 +2389,6 @@
       grid-column: auto;
       grid-row: auto !important;
       aspect-ratio: 4 / 3 !important;
-    }
-
-    .gallery-item img {
-      padding: 8px;
     }
 
     @media (max-width: 900px) {
@@ -2442,7 +2448,6 @@
           <li><a href="#ueber-uns">Restaurant</a></li>
           <li><a href="#speisekarte">Speisekarte</a></li>
           <li><a href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=db79c7e2-c637-42b7-a57e-e1ea057bfbcd&amp;restaurant_uid=9031c25d-6820-4bc0-9a94-4987e2f0abec&amp;facebook=true" target="_blank" rel="noopener">Bestellen</a></li>
-          <li><a href="#spezialitaeten">Spezialitäten</a></li>
           <li><a href="#ueber-uns">Kultur</a></li>
           <li><a href="#galerie">Galerie</a></li>
           <li><a class="nav-cta" href="https://www.foodbooking.com/ordering/restaurant/menu/reservation?company_uid=db79c7e2-c637-42b7-a57e-e1ea057bfbcd&amp;restaurant_uid=9031c25d-6820-4bc0-9a94-4987e2f0abec&amp;reservation=true" target="_blank" rel="noopener">Reservieren</a></li>
@@ -2532,236 +2537,6 @@
           </div>
           <div class="about-photo small">
             <img src="https://images.unsplash.com/photo-1641440615059-42c8ed3af8c8?auto=format&w=800&q=80" alt="Vietnamesische Spezialitäten mit Reis und Kräutern" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="spezialitaeten">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-kicker">Unsere Spezialitäten</span>
-          <h2 class="section-title">Handwerk, Duft und feine Balance.</h2>
-          <p class="section-lead">Ausgewählte Sushi-Kreationen und vietnamesische Klassiker, serviert mit Sorgfalt und Stil.</p>
-        </div>
-
-        <div class="speciality-wrap">
-          <div class="speciality-group reveal">
-            <h3><i class="fa-solid fa-fish" aria-hidden="true"></i> Sushi Spezialitäten</h3>
-            <div class="dish-grid">
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1680675228874-9b9963812b7c?auto=format&w=900&q=78" alt="Sake Nigiri mit Lachs" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Sake Nigiri</h4>
-                    <span class="price">5,50 €</span>
-                  </div>
-                  <p>2 Stück mit Lachs auf rund geformtem japanischem Reis.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1770966666358-37668256a29f?auto=format&w=900&q=78" alt="Sashimi auf dunklem Teller" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Sake Sashimi</h4>
-                    <span class="price">21,90 €</span>
-                  </div>
-                  <p>12 fein geschnittene Lachsscheiben, pur und elegant serviert.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&w=900&q=78" alt="Maki Rollen" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Avosake Maki</h4>
-                    <span class="price">5,20 €</span>
-                  </div>
-                  <p>6 klassische Maki mit Lachs, Avocado, Reis und Seealgen.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-sake-sashimi.jpg" alt="Sake I.O." loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Sake I.O.</h4>
-                    <span class="price">9,90 €</span>
-                  </div>
-                  <p>Inside-Out Roll mit Lachs, Avocado und Masago.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-ebi-tempura-io.jpg" alt="Ebi Tempura I.O." loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Ebi Tempura I.O.</h4>
-                    <span class="price">9,90 €</span>
-                  </div>
-                  <p>Gebackene Garnelen mit Avocado, Rucola, Cream Cheese, Masago und Sesam.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-roaring-tiger.jpg" alt="Roaring Tiger Sushi Roll" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Roaring Tiger</h4>
-                    <span class="price">14,90 €</span>
-                  </div>
-                  <p>Spezialrolle mit Garnele, Aal, Avocado, Gurke, Tobiko und flambiertem Lachs.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1558985212-92c2ff0b56e7?auto=format&w=900&q=78" alt="Rainbow Sushi Roll" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Rainbow</h4>
-                    <span class="price">14,90 €</span>
-                  </div>
-                  <p>Surimi, Tobiko und Thai-Spargel, umwickelt mit Lachs.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1617196035154-1e7e6e28b0db?auto=format&w=900&q=78" alt="Sake Avocado Roll" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Salmon Specials</h4>
-                    <span class="price">14,90 €</span>
-                  </div>
-                  <p>Lachs, Avocado und Cream Cheese, umwickelt mit Avocado.</p>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="speciality-group reveal">
-            <h3><i class="fa-solid fa-bowl-food" aria-hidden="true"></i> Vietnamesische Spezialitäten</h3>
-            <div class="dish-grid">
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="https://images.unsplash.com/photo-1631709497146-a239ef373cf1?auto=format&w=900&q=78" alt="Pho Suppe mit Kräutern" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Pho</h4>
-                    <span class="price">ab 13,90 €</span>
-                  </div>
-                  <p>Traditionelle Pho-Suppe mit Reisbandnudeln, Koriander, Zwiebeln und Zutat nach Wahl.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-udon-nudelsuppe.jpg" alt="Udon Nudelsuppe" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Udon-Nudelsuppe</h4>
-                    <span class="price">ab 13,90 €</span>
-                  </div>
-                  <p>Japanische Nudelsuppe mit Zwiebeln, Seetang, Pak Choi und Zutat nach Wahl.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-nem-viet-nam.jpg" alt="Nem Viet Nam" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Nem Viet Nam</h4>
-                    <span class="price">5,50 €</span>
-                  </div>
-                  <p>2 hausgemachte Frühlingsrollen mit Hackfleisch und Nuoc-Mam-Fischsauce.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-goi-cuon.jpg" alt="Goi Cuon Sommerrollen" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Goi Cuon</h4>
-                    <span class="price">ab 4,90 €</span>
-                  </div>
-                  <p>2 Sommerrollen mit Reisnudeln, Salat, Karotten, Gurken und Reispapier.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-bun-cha-ha-noi.jpg" alt="Bun Cha Ha Noi mit Reisnudeln und Kräutern" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Bun Cha Ha Noi</h4>
-                    <span class="price">17,90 €</span>
-                  </div>
-                  <p>Mariniertes BBQ-Schweinefleisch mit Reisnudeln, Salat, Gurke und Limetten-Fischsauce.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-bun-bo-nam-bo.jpg" alt="Bun Bo Nam Bo Bowl" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Bun Bo Nam Bo</h4>
-                    <span class="price">16,90 €</span>
-                  </div>
-                  <p>Reisnudelsalat mit wokgeschwenktem Rindfleisch, Pak Choi, Kräutern und Nuoc Mam.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-pho-xao.jpg" alt="Pho Xao gebratene Reisbandnudeln" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Pho Xao</h4>
-                    <span class="price">ab 13,90 €</span>
-                  </div>
-                  <p>Gebratene Reisbandnudeln mit Sojasprossen, Ei, Koriander und Zutat nach Wahl.</p>
-                </div>
-              </article>
-
-              <article class="dish-card">
-                <div class="dish-image">
-                  <img src="assets/dishes/featured-curry-kokosmilch.jpg" alt="Curry Kokosmilch mit Reis" loading="lazy">
-                </div>
-                <div class="dish-body">
-                  <div class="dish-title-row">
-                    <h4>Curry Kokosmilch</h4>
-                    <span class="price">ab 13,90 €</span>
-                  </div>
-                  <p>Rotes oder gelbes Curry in Kokoscreme mit Gemüse, Salat und Jasminreis.</p>
-                </div>
-              </article>
-            </div>
           </div>
         </div>
       </div>
@@ -2907,20 +2682,6 @@
                 </div>
                 <span class="price">6,90 €</span>
               </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Matcha Latte</h4>
-                  <p>Japanischer Matcha mit cremiger Milch.</p>
-                </div>
-                <span class="price">6,50 €</span>
-              </div>
-              <div class="menu-row">
-                <div>
-                  <h4>Saigon Bier</h4>
-                  <p>Vietnamesisches Bier, 0,33 l.</p>
-                </div>
-                <span class="price">4,50 €</span>
-              </div>
             </div>
           </div>
 
@@ -2978,7 +2739,7 @@
               </button>
               <div class="menu-book-status" aria-live="polite">
                 <strong id="menuBookTitle">Men&uuml;seite</strong>
-                <span id="menuBookCounter">34 Men&uuml;seiten</span>
+                <span id="menuBookCounter">30 Men&uuml;seiten</span>
               </div>
               <button class="icon-btn menu-book-btn" id="menuBookNext" type="button" aria-label="N&auml;chste Men&uuml;seite">
                 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
@@ -3007,38 +2768,11 @@
       <div class="container">
         <div class="section-header reveal">
           <span class="section-kicker">Galerie</span>
-          <h2 class="section-title">Ein Blick auf Geschmack und Atmosphäre.</h2>
-          <p class="section-lead">Moderne Sushi-Kompositionen, vietnamesische Aromen und ein Ambiente für genussvolle Abende.</p>
+          <h2 class="section-title">Ein Blick auf unsere Atmosphäre.</h2>
+          <p class="section-lead">Einblicke in unser Ambiente, warme Details und den Raum für genussvolle Abende.</p>
         </div>
 
         <div class="gallery-grid reveal">
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-01.jpg" alt="Sake Ikura Don mit Lachs und Kaviar" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-02.jpg" alt="Flambierter Sake Aburi Don" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-03.jpg" alt="Sushi-Rollen mit Lachs auf dunklem Teller" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-04.jpg" alt="Sake Sashimi mit Wasabi" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-05.jpg" alt="Gemischte Sashimi Platte" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-06.jpg" alt="Bun Reisnudelsuppe mit Rindfleisch" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-07.jpg" alt="Gebratene Nudeln mit Gemuse und Rindfleisch" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-08.jpg" alt="Warme Suppen mit Tofu und Krautern" loading="lazy">
-          </button>
-          <button class="gallery-item" type="button" aria-label="Bild vergrößern">
-            <img src="assets/gallery/tobisu-gallery-09.jpg" alt="Wakame Salat mit Sesam" loading="lazy">
-          </button>
           <button class="gallery-item" type="button" aria-label="Bild vergrößern">
             <img src="new1.jpg" alt="TOBISU neues Galeriebild 1" loading="lazy">
           </button>
@@ -3129,7 +2863,6 @@
           <ul class="reservation-list">
             <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Mo.: Geschlossen<br>Di. - So.: 11:00 - 15:00 &amp; 17:00 - 22:00</span></li>
             <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Heerstraße 175, 56154 Boppard, Deutschland</span></li>
-            <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp: 06742 9415865</span></li>
           </ul>
           <a class="btn btn-secondary" href="https://www.foodbooking.com/ordering/restaurant/menu/reservation?company_uid=db79c7e2-c637-42b7-a57e-e1ea057bfbcd&amp;restaurant_uid=9031c25d-6820-4bc0-9a94-4987e2f0abec&amp;reservation=true" target="_blank" rel="noopener">
             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
@@ -3179,7 +2912,7 @@
             <label for="message">Nachricht</label>
             <textarea id="message" name="message" placeholder="Besondere Wünsche"></textarea>
           </div>
-          <div class="form-message" id="formMessage">Vielen Dank. Ihre Anfrage wurde vorbereitet. Für eine verbindliche Bestätigung nutzen Sie bitte zusätzlich die Reservierung im Internet oder WhatsApp.</div>
+          <div class="form-message" id="formMessage">Vielen Dank. Ihre Anfrage wurde vorbereitet. Für eine verbindliche Bestätigung nutzen Sie bitte zusätzlich die Reservierung im Internet.</div>
           <div class="form-group full">
             <button class="btn btn-primary" type="submit">
               <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
@@ -3214,13 +2947,6 @@
                 <div>
                   <strong>Telefon</strong>
                   <a href="tel:+4967429415865">06742 9415865</a>
-                </div>
-              </li>
-              <li>
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <div>
-                  <strong>E-Mail</strong>
-                  <a href="mailto:buiphuong160693@gmail.com">buiphuong160693@gmail.com</a>
                 </div>
               </li>
               <li>
@@ -3264,7 +2990,6 @@
           <a href="https://wa.me/4967429415865" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
           <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
           <a href="#" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
-          <a href="mailto:buiphuong160693@gmail.com" aria-label="E-Mail" title="E-Mail"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -3372,7 +3097,7 @@
     const menuBookNumbers = [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
       12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-      22, 23, 24, 25, 26, 27, 29, 30, 31, 32, 38, 39, 40
+      22, 23, 24, 25, 26, 27, 38, 39, 40
     ];
     const menuBookPages = menuBookNumbers.map((number) => {
       const label = String(number).padStart(2, "0");
