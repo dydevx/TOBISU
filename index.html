@@ -740,9 +740,10 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 0.92fr;
+      grid-template-columns: minmax(0, 1fr);
       align-items: center;
-      gap: 56px;
+      max-width: 860px;
+      gap: 0;
     }
 
     .about-copy p + p {
@@ -2531,14 +2532,6 @@
           </div>
         </div>
 
-        <div class="about-media reveal">
-          <div class="about-photo large">
-            <img src="https://images.unsplash.com/photo-1763647756796-af9230245bf8?auto=format&w=1100&q=80" alt="Elegante Sushi-Platte bei TOBISU" loading="lazy">
-          </div>
-          <div class="about-photo small">
-            <img src="https://images.unsplash.com/photo-1641440615059-42c8ed3af8c8?auto=format&w=800&q=80" alt="Vietnamesische Spezialitäten mit Reis und Kräutern" loading="lazy">
-          </div>
-        </div>
       </div>
     </section>
 
@@ -2576,21 +2569,21 @@
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Ebi Tempura I.O.</h4>
+                  <h4>Ebi Tempura I.O. 8 stk</h4>
                   <p>Inside-Out Roll mit gebackenen Garnelen, Avocado, Rucola, Cream Cheese, Masago und Sesam.</p>
                 </div>
                 <span class="price">9,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Roaring Tiger</h4>
+                  <h4>Roaring Tiger 8 stk</h4>
                   <p>Spezialrolle mit gebackenen Garnelen, gegrilltem Aal, Avocado, Gurke, Tobiko und flambiertem Lachs.</p>
                 </div>
                 <span class="price">14,90 €</span>
               </div>
               <div class="menu-row">
                 <div>
-                  <h4>Tobisu Roll</h4>
+                  <h4>Tobisu Roll 10 stk</h4>
                   <p>Baked Roll mit gebackener Garnele, Rucola, Avocado und Cream Cheese.</p>
                 </div>
                 <span class="price">14,90 €</span>
@@ -2598,7 +2591,7 @@
               <div class="menu-row">
                 <div>
                   <h4>Sushi Menü 5</h4>
-                  <p>2 Sake Gunkan, 2 Nigiri, 6 Avosake Maki, 8 Ebi Tempura I.O. und 10 Toronto Rolls.</p>
+                  <p>2 stk Sake Gunkan, 2 stk Nigiri, 6 stk Avosake Maki, 8 stk Ebi Tempura I.O. und 10 stk Toronto Rolls.</p>
                 </div>
                 <span class="price">37,90 €</span>
               </div>
