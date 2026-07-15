@@ -2759,7 +2759,7 @@
               </button>
               <div class="menu-book-status" aria-live="polite">
                 <strong id="menuBookTitle">Men&uuml;seite</strong>
-                <span id="menuBookCounter">33 Men&uuml;seiten</span>
+                <span id="menuBookCounter">29 Men&uuml;seiten</span>
               </div>
               <button class="icon-btn menu-book-btn" id="menuBookNext" type="button" aria-label="N&auml;chste Men&uuml;seite">
                 <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
@@ -3114,17 +3114,13 @@
       });
     });
 
-    const menuBookNumbers = [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,
-      12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-      22, 23, 24, 25, 26, 27, 30, 31, 32, 38, 39, 40
-    ];
+    const menuBookNumbers = Array.from({ length: 29 }, (_, index) => index + 1);
     const menuBookPages = menuBookNumbers.map((number) => {
       const label = String(number).padStart(2, "0");
       return {
         label,
-        thumb: `assets/menu-final/thumbs/${number}.jpg`,
-        full: `assets/menu-final/large/${number}.jpg`
+        thumb: `assets/menu-15-7/thumbs/${number}.jpg`,
+        full: `assets/menu-15-7/large/${number}.jpg`
       };
     });
     const menuBookStage = document.getElementById("menuBookStage");
