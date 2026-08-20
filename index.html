@@ -2454,6 +2454,122 @@
         font-size: 0.56rem;
       }
     }
+
+    .pickup-offer {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: min(100% - 32px, 520px);
+      max-width: 520px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 14px;
+      background: var(--black-card);
+      color: var(--white);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.52);
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+
+    .pickup-offer::backdrop {
+      background: rgba(8, 7, 6, 0.78);
+      backdrop-filter: blur(5px);
+    }
+
+    .pickup-offer[open] {
+      animation: offer-enter 360ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .pickup-offer__accent {
+      height: 6px;
+      background: var(--gold);
+    }
+
+    .pickup-offer__content {
+      position: relative;
+      padding: clamp(30px, 7vw, 46px);
+      text-align: center;
+    }
+
+    .pickup-offer__close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .pickup-offer__close:hover,
+    .pickup-offer__close:focus-visible {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .pickup-offer__icon {
+      display: grid;
+      place-items: center;
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--red);
+      color: var(--gold-soft);
+      font-size: 1.8rem;
+    }
+
+    .pickup-offer h2 {
+      margin-bottom: 14px;
+      color: var(--gold-soft);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.75rem, 6vw, 2.45rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .pickup-offer p {
+      max-width: 40ch;
+      margin: 0 auto 26px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(0.98rem, 3vw, 1.08rem);
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+
+    .pickup-offer strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .pickup-offer .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @keyframes offer-enter {
+      from {
+        opacity: 0;
+        transform: translate(-50%, calc(-50% + 18px)) scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pickup-offer[open] {
+        animation: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -3026,6 +3142,24 @@
     <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </button>
 
+  <dialog class="pickup-offer" id="pickupOffer" aria-labelledby="pickupOfferTitle" aria-describedby="pickupOfferText">
+    <div class="pickup-offer__accent" aria-hidden="true"></div>
+    <div class="pickup-offer__content">
+      <button class="pickup-offer__close" id="pickupOfferClose" type="button" aria-label="Angebot schließen">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div class="pickup-offer__icon" aria-hidden="true">
+        <i class="fa-solid fa-glass-water"></i>
+      </div>
+      <h2 id="pickupOfferTitle">Ein Getränk geht aufs Haus</h2>
+      <p id="pickupOfferText">Ab einem Bestellwert von <strong>50&nbsp;€</strong> erhalten Sie ein gratis Getränk bei Bestellung und Selbstabholung.</p>
+      <a class="btn btn-primary" href="https://www.foodbooking.com/ordering/restaurant/menu?company_uid=db79c7e2-c637-42b7-a57e-e1ea057bfbcd&amp;restaurant_uid=9031c25d-6820-4bc0-9a94-4987e2f0abec&amp;facebook=true" target="_blank" rel="noopener">
+        <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+        Jetzt bestellen
+      </a>
+    </div>
+  </dialog>
+
   <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Galeriebild">
     <button class="icon-btn lightbox-close" id="lightboxClose" type="button" aria-label="Galerie schließen">
       <i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -3038,6 +3172,26 @@
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
     const backToTop = document.getElementById("backToTop");
+    const pickupOffer = document.getElementById("pickupOffer");
+    const pickupOfferClose = document.getElementById("pickupOfferClose");
+
+    const closePickupOffer = () => {
+      pickupOffer.close();
+      document.body.style.overflow = "";
+    };
+
+    window.setTimeout(() => {
+      pickupOffer.showModal();
+      document.body.style.overflow = "hidden";
+    }, 650);
+
+    pickupOfferClose.addEventListener("click", closePickupOffer);
+    pickupOffer.addEventListener("click", (event) => {
+      if (event.target === pickupOffer) closePickupOffer();
+    });
+    pickupOffer.addEventListener("close", () => {
+      document.body.style.overflow = "";
+    });
 
     const setHeaderState = () => {
       const scrolled = window.scrollY > 36;
